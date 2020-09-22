@@ -9,7 +9,16 @@ export class CompanyNumberService implements checker {
     ) { }
 
     async check(input: number): Promise<any> {
-        const data = `<map id="ATTABZAA001R08"><pubcUserNo/><mobYn>N</mobYn><inqrTrgtClCd>1</inqrTrgtClCd><txprDscmNo>1234512344</txprDscmNo><dongCode>45</dongCode><psbSearch>Y</psbSearch><map id="userReqInfoVO"/></map><nts<nts>nts>59Tlkq16T5UT5vmp6rd1Fmp1qHPy3ObOjYy7GT5xMA48`
-        return (await this.http.post("", data)).data
+        let payload = ``
+        payload += `<map id="ATTABZAA001R08">`
+        payload += `<pubcUserNo/>`
+        payload += `<mobYn>N</mobYn>`
+        payload += `<inqrTrgtClCd>1</inqrTrgtClCd>`
+        payload += `<txprDscmNo>${input}</txprDscmNo>`
+        payload += `<dongCode>${input.toString().slice(3,4)}</dongCode>`
+        payload += `<psbSearch>Y</psbSearch>`
+        payload += `<map id="userReqInfoVO"/></map>`
+        payload += `<nts<nts>nts>59Tlkq16T5UT5vmp6rd1Fmp1qHPy3ObOjYy7GT5xMA48`
+        return (await this.http.post("", payload)).data
     }
 }
