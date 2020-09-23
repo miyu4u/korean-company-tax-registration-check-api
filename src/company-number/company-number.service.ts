@@ -49,7 +49,7 @@ export class CompanyNumberService implements checker {
         return payload
     }
 
-    protected responseMessageParser(payload: string) {
+    responseMessageParser(payload: string) {
         const result = new CompanyStatus()
         const ntsStatus = (payload.match(/<smpcBmanTrtCntn>(.*?)<\/smpcBmanTrtCntn>/)[1] as string).trimEnd()
         result.nts_status = ntsStatus.includes("등록되어 있는") ? true : false
