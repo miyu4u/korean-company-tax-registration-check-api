@@ -1,0 +1,1 @@
+export type inputPayload = { num: number, dongCode: number }
