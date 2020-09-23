@@ -1,7 +1,9 @@
+import { companyRunInStatus, companyTaxType } from "./company-number.type"
+
 export class CompanyStatus {
     nts_status: boolean
-    status: "사업" | "휴업" | "폐업" | ""
-    type: "일반" | "간이" | "면세"
+    status: companyRunInStatus
+    type: companyTaxType
     changed_date?: string
     closed_date?: string
     raw: {
