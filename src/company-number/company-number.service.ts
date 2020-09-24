@@ -3,7 +3,7 @@ import { AxiosInstance } from 'axios';
 import { checker } from 'src/checker.interface';
 import { inputPayload } from './company-number.type';
 import { CompanyStatus } from './company-status.dto';
-import { clearConfigCache } from 'prettier';
+
 @Injectable()
 export class CompanyNumberService implements checker {
     constructor(
