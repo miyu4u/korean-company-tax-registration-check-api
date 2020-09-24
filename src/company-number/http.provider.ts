@@ -9,7 +9,7 @@ export const HttpProvider: Provider = {
             "Accept-Encoding": "gzip, deflate, br",
             "Accept-Language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7",
             "Connection": "keep-alive",
-            "Content-Length": "257",
+            // "Content-Length": "257",
             "Content-Type": "application/xml; charset=UTF-8",
             "Host": "teht.hometax.go.kr",
             "Origin": "https://teht.hometax.go.kr",
