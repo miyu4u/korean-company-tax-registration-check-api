@@ -1,4 +1,5 @@
 import { Controller, Get, Param } from '@nestjs/common';
+import { CompanyNumberValidationPipe } from './company-number-validation.pipe';
 import { CompanyNumberService } from './company-number.service';
 
 @Controller('company-number')
@@ -9,7 +10,7 @@ export class CompanyNumberController {
     ) { }
 
     @Get(":num")
-    async test(@Param("num") num:number) {
+    async test(@Param("num",CompanyNumberValidationPipe) num:number) {
         return await this.service.check(num)
     }
 }
