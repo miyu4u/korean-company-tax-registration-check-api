@@ -2,7 +2,7 @@ import { Inject, Injectable, ServiceUnavailableException } from '@nestjs/common'
 import { AxiosInstance } from 'axios';
 import { checker } from 'src/checker.interface';
 import { inputPayload } from './company-number.type';
-import { CompanyStatus } from './company-status.dto';
+import { CompanyStatus } from './dto/company-status.dto';
 
 @Injectable()
 export class CompanyNumberService implements checker {
@@ -24,11 +24,7 @@ export class CompanyNumberService implements checker {
     async doCheck(payload: string) {
         const response = await this.http.post("", payload)
         const raw = response.data
-        console.log(raw)
         return this.responseMessageParser(raw)
-        // const status = (raw.match(/<smpcBmanTrtCntn>(.*?)<\/smpcBmanTrtCntn>/)[1] as string).trimEnd()
-        // const description = raw.match(/<trtCntn>(.*?)<\/trtCntn>/)[1]
-        // return { status, description, raw }
     }
 
     protected parseCompanyNumber(input: number): inputPayload {
@@ -62,11 +58,11 @@ export class CompanyNumberService implements checker {
         result.changed_date = changed_date
 
         result.type = this.getCompanyType(description)
-        // result.raw = {
-        //     description,
-        //     status: ntsStatus,
-        //     message: payload
-        // }
+        result.raw = {
+            description,
+            status: ntsStatus,
+            message: payload
+        }
         result.queriedAt = new Date().toLocaleString()
         return result
     }
