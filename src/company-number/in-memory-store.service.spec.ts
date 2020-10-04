@@ -1,5 +1,5 @@
 import 'reflect-metadata'
-import { InMemoryStoreService } from './company-number/in-memory-store.service'
+import { InMemoryStoreService } from './in-memory-store.service'
 
 describe('in memory store', () => {
     let store: InMemoryStoreService

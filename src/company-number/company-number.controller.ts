@@ -1,5 +1,5 @@
 import { CacheInterceptor, Controller, Get, Param, UseInterceptors } from '@nestjs/common';
-import { CompanyNumberValidationPipe } from './company-number-validation.pipe';
+import { CompanyNumberValidationPipe } from '../pipes/company-number-validation.pipe';
 import { CompanyNumberService } from './company-number.service';
 
 @Controller('company-number')

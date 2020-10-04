@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import { store } from "src/store.interface";
+import { store } from "src/contracts/store.interface";
 import { CompanyStatus } from "./dto/company-status.dto";
 
 @Injectable()

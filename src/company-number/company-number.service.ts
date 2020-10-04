@@ -1,7 +1,7 @@
 import { Inject, Injectable, ServiceUnavailableException } from '@nestjs/common';
 import { AxiosInstance } from 'axios';
-import { checker } from 'src/checker.interface';
-import { store } from 'src/store.interface';
+import { checker } from '../contracts/checker.interface';
+import { store } from '../contracts/store.interface';
 import { inputPayload } from './company-number.type';
 import { CompanyStatus } from './dto/company-status.dto';
 import { NTSParserService } from './nts-parser.service';
