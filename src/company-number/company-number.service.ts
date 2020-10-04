@@ -63,7 +63,7 @@ export class CompanyNumberService implements checker {
                 status:NTSParseResult,
                 message:NTSResponseString
             },
-            queriedAt: new Date(),
+            queriedAt: new Date().toLocaleString(),
         })
     }
 }
