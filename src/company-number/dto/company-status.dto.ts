@@ -8,6 +8,6 @@ export class CompanyStatus {
     changed_date?: string
     closed_date?: string
     raw: NTSQueryResult
-    queriedAt: Date | String
+    queriedAt: Date | string
     constructor(part?: Partial<CompanyStatus>) { if (part) Object.assign(this, part) }
 }
