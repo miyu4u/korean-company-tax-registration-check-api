@@ -3,7 +3,7 @@ name: Node CI
 on: [push]
 
 jobs:
-  devx-dependency:
+  dev-dependency:
     name: install dev-dependency
     runs-on: ubuntu-latest
     strategy:
@@ -23,6 +23,7 @@ jobs:
         path: node_modules
   unit-tests:
     runs-on: ubuntu-latest
+    needs: dev-dependency
     strategy:
       matrix:
         node-version: [12.x]
@@ -39,6 +40,7 @@ jobs:
     - run: yarn test:cov
   build:
     runs-on: ubuntu-latest
+    needs: dev-dependency
     strategy:
       matrix:
         node-version: [12.x]
